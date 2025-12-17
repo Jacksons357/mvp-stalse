@@ -1,0 +1,22 @@
+[
+  { "title": "Erro no login", "status": "open", "priority": "high"},
+  { "title": "Bug no dashboard", "status": "open", "priority": "medium"},
+  { "title": "Problema de conexão", "status": "closed", "priority": "low"},
+  { "title": "Relatório não carrega", "status": "open", "priority": "medium"},
+  { "title": "Funcionalidade não aparece", "status": "open", "priority": "high"},
+  { "title": "Atualização de perfil falha", "status": "open", "priority": "low"},
+  { "title": "Notificações não chegam", "status": "open", "priority": "medium"},
+  { "title": "Erro 500 em requisições", "status": "open", "priority": "high"},
+  { "title": "Cache não atualiza", "status": "open", "priority": "low"},
+  { "title": "Formulário não envia", "status": "open", "priority": "high"},
+  { "title": "Imagem não carrega", "status": "open", "priority": "low"},
+  { "title": "Texto em inglês no sistema", "status": "open", "priority": "low"},
+  { "title": "Botão desativado no mobile", "status": "open", "priority": "medium"},
+  { "title": "Layout quebrado em dispositivos móveis", "status": "open", "priority": "high"},
+  { "title": "Problema com autenticação OAuth", "status": "open", "priority": "high"},
+  { "title": "Erro no carregamento de módulos", "status": "open", "priority": "medium"},
+  { "title": "Permissões de usuário não estão sendo aplicadas", "status": "open", "priority": "high"},
+  { "title": "Relatório de erros não está sendo gerado", "status": "open", "priority": "medium"},
+  { "title": "Cache de API não está sendo limpo", "status": "open", "priority": "low"},
+  { "title": "Atualizações de dados não estão sincronizando", "status": "open", "priority": "medium"}
+]
