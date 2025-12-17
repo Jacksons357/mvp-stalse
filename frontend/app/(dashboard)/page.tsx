@@ -5,7 +5,7 @@ import { ChartTopTicketTypes } from './components/chart-top-ticket-types'
 
 export default function DashboardPage() {
   return (
-    <section className="pt-5 space-y-5">
+    <section className="pt-5 px-5 space-y-5">
       <div className="border-b flex flex-col pb-3">
         <h1 className="text-2xl font-semibold">Dashboard</h1>
         <p className="text-muted-foreground">Métricas e dados dos Tickets</p>
