@@ -1,0 +1,141 @@
+{
+  "tickets_per_month": [
+    {
+      "created_at": "2020-01",
+      "count": 377
+    },
+    {
+      "created_at": "2020-02",
+      "count": 376
+    },
+    {
+      "created_at": "2020-03",
+      "count": 324
+    },
+    {
+      "created_at": "2020-04",
+      "count": 354
+    },
+    {
+      "created_at": "2020-05",
+      "count": 322
+    },
+    {
+      "created_at": "2020-06",
+      "count": 358
+    },
+    {
+      "created_at": "2020-07",
+      "count": 366
+    },
+    {
+      "created_at": "2020-08",
+      "count": 327
+    },
+    {
+      "created_at": "2020-09",
+      "count": 369
+    },
+    {
+      "created_at": "2020-10",
+      "count": 373
+    },
+    {
+      "created_at": "2020-11",
+      "count": 340
+    },
+    {
+      "created_at": "2020-12",
+      "count": 350
+    },
+    {
+      "created_at": "2021-01",
+      "count": 359
+    },
+    {
+      "created_at": "2021-02",
+      "count": 339
+    },
+    {
+      "created_at": "2021-03",
+      "count": 348
+    },
+    {
+      "created_at": "2021-04",
+      "count": 364
+    },
+    {
+      "created_at": "2021-05",
+      "count": 379
+    },
+    {
+      "created_at": "2021-06",
+      "count": 320
+    },
+    {
+      "created_at": "2021-07",
+      "count": 361
+    },
+    {
+      "created_at": "2021-08",
+      "count": 364
+    },
+    {
+      "created_at": "2021-09",
+      "count": 327
+    },
+    {
+      "created_at": "2021-10",
+      "count": 362
+    },
+    {
+      "created_at": "2021-11",
+      "count": 364
+    },
+    {
+      "created_at": "2021-12",
+      "count": 346
+    }
+  ],
+  "top_ticket_types": [
+    {
+      "ticket_type": "Refund request",
+      "count": 1752
+    },
+    {
+      "ticket_type": "Technical issue",
+      "count": 1747
+    },
+    {
+      "ticket_type": "Cancellation request",
+      "count": 1695
+    },
+    {
+      "ticket_type": "Product inquiry",
+      "count": 1641
+    },
+    {
+      "ticket_type": "Billing inquiry",
+      "count": 1634
+    }
+  ],
+  "tickets_by_priority": [
+    {
+      "priority": "Medium",
+      "count": 2192
+    },
+    {
+      "priority": "Critical",
+      "count": 2129
+    },
+    {
+      "priority": "High",
+      "count": 2085
+    },
+    {
+      "priority": "Low",
+      "count": 2063
+    }
+  ],
+  "total_tickets": 8469
+}
