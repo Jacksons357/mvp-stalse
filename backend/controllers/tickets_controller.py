@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from infra.factories.tickets_factory import make_tickets_service
-from dtos.ticket_dto import TicketResponseDTO, TicketUpdateDTO
+from backend.infra.factories.tickets_factory import make_tickets_service
+from backend.dtos.ticket_dto import TicketResponseDTO, TicketUpdateDTO
 
 router = APIRouter()
 tickets_service = make_tickets_service()

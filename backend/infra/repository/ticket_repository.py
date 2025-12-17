@@ -1,5 +1,5 @@
-from infra.database.sqlite import SessionLocal
-from infra.models.ticket_model import Ticket
+from backend.infra.database.sqlite import SessionLocal
+from backend.infra.models.ticket_model import Ticket
 
 class TicketRepository:
   def list(self):

@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, DateTime
-from infra.database.sqlite import Base
+from backend.infra.database.sqlite import Base
 from datetime import datetime
 
 class Ticket(Base):

@@ -1,5 +1,5 @@
-from infra.repository.ticket_repository import TicketRepository
-from dtos.ticket_dto import TicketResponseDTO, TicketUpdateDTO
+from backend.infra.repository.ticket_repository import TicketRepository
+from backend.dtos.ticket_dto import TicketResponseDTO, TicketUpdateDTO
 
 class TicketsService:
   def __init__(self, ticket_repository: TicketRepository):

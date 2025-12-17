@@ -1,6 +1,6 @@
 import json
-from infra.database.sqlite import SessionLocal, engine, Base
-from infra.models.ticket_model import Ticket
+from backend.infra.database.sqlite import SessionLocal, engine, Base
+from backend.infra.models.ticket_model import Ticket
 
 def run_seeds():
   Base.metadata.create_all(bind=engine)
@@ -10,7 +10,7 @@ def run_seeds():
     session.close()
     return
 
-  with open("./infra/seeds/tickets.json") as f:
+  with open("./backend/infra/seeds/tickets.json") as f:
     tickets = json.load(f)
 
   for t in tickets:
