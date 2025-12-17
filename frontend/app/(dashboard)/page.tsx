@@ -1,7 +1,7 @@
-import CardTotalTickets from './tickets/components/card-total-tickets'
-import { ChartTicketsByPriority } from './tickets/components/chart-tickets-by-priority'
-import { ChartTicketsPerMonth } from './tickets/components/chart-tickets-per-month'
-import { ChartTopTicketTypes } from './tickets/components/chart-top-ticket-types'
+import CardTotalTickets from './components/card-total-tickets'
+import { ChartTicketsByPriority } from './components/chart-tickets-by-priority'
+import { ChartTicketsPerMonth } from './components/chart-tickets-per-month'
+import { ChartTopTicketTypes } from './components/chart-top-ticket-types'
 
 export default function DashboardPage() {
   return (
