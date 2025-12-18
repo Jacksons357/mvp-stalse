@@ -1,7 +1,11 @@
 # STALSE - Desafio Técnico
 MVP básico para gerenciamento de tickets e visualizar métricas de arquivos gerados pelo pandas.
+<img width="1335" height="852" alt="image" src="https://github.com/user-attachments/assets/17c766d0-3e4c-4ad1-b9e8-68a10446b280" />
+
 
 O sistema permite visualizar tickets e atualizar status ou prioridade dos mesmos.
+<img width="1335" height="852" alt="image" src="https://github.com/user-attachments/assets/c557df15-9067-4481-9767-366d72940be8" />
+
 
 ## Stack
 - FastAPI + SQLite
