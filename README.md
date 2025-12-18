@@ -29,6 +29,12 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+3. Configure o .env do backend
+
+```bash
+cp backend/.env.example backend/.env
+```
+
 ### Backend
 
 ```bash
@@ -142,3 +148,6 @@ cp .env.example .env.local
   └─ utils/ - utilitários
 ```
 
+## N8N - Workflow
+
+O service WebhookService envia um webhook para o n8n quando um ticket é atualizado.
