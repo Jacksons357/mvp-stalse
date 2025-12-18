@@ -23,3 +23,9 @@ class TicketRepository:
     session.refresh(ticket)
     session.close()
     return ticket
+  
+  def find_by_id(self, ticket_id: int):
+    session = SessionLocal()
+    ticket = session.query(Ticket).get(ticket_id)
+    session.close()
+    return ticket

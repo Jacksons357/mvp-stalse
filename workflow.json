@@ -1,0 +1,59 @@
+{
+  "name": "mvp-stalse",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "/ticket-update",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -144,
+        -96
+      ],
+      "id": "8bafa20a-80cb-4d75-96b1-faef7089cb18",
+      "name": "Webhook",
+      "webhookId": "e91d3ee4-e5f1-4846-8d56-21abb331c3b9"
+    },
+    {
+      "parameters": {
+        "jsCode": "return $input.first().json.body;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        64,
+        -96
+      ],
+      "id": "0f1dbdce-3c9c-46f1-8239-6194a5d3f4f4",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "ae71bc21-2289-4407-a304-190a05c1e704",
+  "meta": {
+    "instanceId": "d47417198ab4327e3ce874232257cb47edaeb15b5afbfb78838fc6c76fca00cc"
+  },
+  "id": "1VyJ6P0ixBSxmHPw",
+  "tags": []
+}

@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv(dotenv_path="./backend/.env")
+
 from fastapi import FastAPI
 from backend.controllers.tickets_controller import router as tickets_router
 from backend.infra.seeds.seed_tickets import run_seeds
