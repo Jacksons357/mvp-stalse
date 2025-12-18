@@ -6,6 +6,8 @@ MVP básico para gerenciamento de tickets e visualizar métricas de arquivos ger
 O sistema permite visualizar tickets e atualizar status ou prioridade dos mesmos.
 <img width="1335" height="852" alt="image" src="https://github.com/user-attachments/assets/c557df15-9067-4481-9767-366d72940be8" />
 
+Vídeo demonstrativo
+https://github.com/user-attachments/assets/a21e9ff1-5283-46af-9783-d40f171d8d72
 
 ## Stack
 - FastAPI + SQLite
