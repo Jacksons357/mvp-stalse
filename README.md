@@ -151,3 +151,5 @@ cp .env.example .env.local
 ## N8N - Workflow
 
 O service WebhookService envia um webhook para o n8n quando um ticket é atualizado.
+
+<img width="984" height="619" alt="Group 1" src="https://github.com/user-attachments/assets/5e82b9c0-cffa-4c6e-a904-2d64cc771c24" />
