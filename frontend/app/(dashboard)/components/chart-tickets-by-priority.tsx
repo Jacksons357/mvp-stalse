@@ -9,13 +9,14 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from '@/components/ui/chart'
+import type { TicketsByPriority } from '@/types/metrics'
 
-export const fakeTicketsByPriority = [
-  { priority: 'Medium', count: 2192 },
-  { priority: 'Critical', count: 2129 },
-  { priority: 'High', count: 2085 },
-  { priority: 'Low', count: 2063 },
-]
+// export const fakeTicketsByPriority = [
+//   { priority: 'Medium', count: 2192 },
+//   { priority: 'Critical', count: 2129 },
+//   { priority: 'High', count: 2085 },
+//   { priority: 'Low', count: 2063 },
+// ]
 
 export const ticketsByPriorityChartConfig = {
   Medium: {
@@ -36,7 +37,13 @@ export const ticketsByPriorityChartConfig = {
   },
 } satisfies ChartConfig
 
-export function ChartTicketsByPriority() {
+interface ChartTicketsByPriorityProps {
+  ticketsByPriority: TicketsByPriority[]
+}
+
+export function ChartTicketsByPriority({
+  ticketsByPriority,
+}: ChartTicketsByPriorityProps) {
   return (
     <ChartContainer
       config={ticketsByPriorityChartConfig}
@@ -44,14 +51,14 @@ export function ChartTicketsByPriority() {
     >
       <PieChart>
         <Pie
-          data={fakeTicketsByPriority}
+          data={ticketsByPriority}
           dataKey="count"
           nameKey="priority"
           innerRadius={60}
           outerRadius={90}
           paddingAngle={3}
         >
-          {fakeTicketsByPriority.map((entry) => (
+          {ticketsByPriority.map((entry) => (
             <Cell
               key={entry.priority}
               fill={`var(--color-${entry.priority})`}

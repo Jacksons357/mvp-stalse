@@ -8,14 +8,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from '@/components/ui/chart'
-
-export const fakeTopTicketTypes = [
-  { ticket_type: 'Refund request', count: 1752 },
-  { ticket_type: 'Technical issue', count: 1747 },
-  { ticket_type: 'Cancellation request', count: 1695 },
-  { ticket_type: 'Product inquiry', count: 1641 },
-  { ticket_type: 'Billing inquiry', count: 1634 },
-]
+import type { TopTicketTypes } from '@/types/metrics'
 
 export const topTicketTypesChartConfig = {
   count: {
@@ -24,14 +17,20 @@ export const topTicketTypesChartConfig = {
   },
 } satisfies ChartConfig
 
-export function ChartTopTicketTypes() {
+interface ChartTopTicketTypesProps {
+  topTicketTypes: TopTicketTypes[]
+}
+
+export function ChartTopTicketTypes({
+  topTicketTypes,
+}: ChartTopTicketTypesProps) {
   return (
     <Card className="px-2">
       <h1 className="text-lg font-semibold text-muted-foreground text-center">
         Top Tipos de Ticket
       </h1>
       <ChartContainer config={topTicketTypesChartConfig} className="md:h-40">
-        <BarChart data={fakeTopTicketTypes} layout="vertical">
+        <BarChart data={topTicketTypes} layout="vertical">
           <CartesianGrid horizontal={false} />
 
           <XAxis type="number" tickLine={true} axisLine={true} />

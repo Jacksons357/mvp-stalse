@@ -1,36 +1,5 @@
 'use client'
 
-const chartDataFictitious = {
-  '2020': [
-    { month: 1, count: 377 },
-    { month: 2, count: 376 },
-    { month: 3, count: 324 },
-    { month: 4, count: 354 },
-    { month: 5, count: 322 },
-    { month: 6, count: 358 },
-    { month: 7, count: 366 },
-    { month: 8, count: 327 },
-    { month: 9, count: 369 },
-    { month: 10, count: 373 },
-    { month: 11, count: 340 },
-    { month: 12, count: 350 },
-  ],
-  '2021': [
-    { month: 1, count: 359 },
-    { month: 2, count: 339 },
-    { month: 3, count: 348 },
-    { month: 4, count: 364 },
-    { month: 5, count: 379 },
-    { month: 6, count: 320 },
-    { month: 7, count: 361 },
-    { month: 8, count: 364 },
-    { month: 9, count: 327 },
-    { month: 10, count: 362 },
-    { month: 11, count: 364 },
-    { month: 12, count: 346 },
-  ],
-}
-
 import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts'
 import { Card } from '@/components/ui/card'
 import {
@@ -41,6 +10,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from '@/components/ui/chart'
+import type { TicketsPerMonth } from '@/types/metrics'
 import { formatTicketsPerMonth } from '@/utils/format-tickets-per-month'
 
 const chartConfig = {
@@ -54,8 +24,14 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function ChartTicketsPerMonth() {
-  const chartData = formatTicketsPerMonth(chartDataFictitious)
+interface ChartTicketsPerMonthProps {
+  ticketsPerMonth: TicketsPerMonth
+}
+
+export function ChartTicketsPerMonth({
+  ticketsPerMonth,
+}: ChartTicketsPerMonthProps) {
+  const chartData = formatTicketsPerMonth(ticketsPerMonth)
 
   return (
     <Card className="px-2">
