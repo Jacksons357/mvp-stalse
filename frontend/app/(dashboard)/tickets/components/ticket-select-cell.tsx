@@ -7,43 +7,55 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { Spinner } from '@/components/ui/spinner'
 
-type Option = {
-  label: string
-  value: string
+type TicketSelectCellProps<T extends string> = {
+  value: T
+  options: { label: string; value: T; color?: string }[]
+  onChange: (value: T) => void
+  loading?: boolean
+  disabled?: boolean
+  className?: string
 }
 
-type TicketSelectCellProps = {
-  value: string
-  options: Option[]
-  onChange: (value: string) => void
-}
-
-export function TicketSelectCell({
+export function TicketSelectCell<T extends string>({
   value,
   options,
   onChange,
-}: TicketSelectCellProps) {
-  const statusStyles = {
-    open: 'bg-green-50 text-green-700',
-    closed: 'bg-red-50 text-red-700',
-  }
-
+  loading = false,
+  disabled = false,
+  className,
+}: TicketSelectCellProps<T>) {
   return (
-    <Select defaultValue={value} onValueChange={onChange}>
-      <SelectTrigger
-        className={`h-8 w-[120px] ${statusStyles[value as keyof typeof statusStyles]}`}
-      >
-        <SelectValue />
-      </SelectTrigger>
+    <div className={`relative ${className || ''}`}>
+      {loading ? (
+        <div className="flex justify-center items-center h-8">
+          <Spinner className="h-4 w-4" />
+        </div>
+      ) : (
+        <Select
+          value={value}
+          onValueChange={(val) => onChange(val as T)}
+          disabled={disabled || loading}
+        >
+          <SelectTrigger className="h-8 w-[120px]">
+            <SelectValue />
+          </SelectTrigger>
 
-      <SelectContent>
-        {options.map((opt) => (
-          <SelectItem key={opt.value} value={opt.value}>
-            {opt.label}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
+          <SelectContent>
+            {options.map((opt) => (
+              <SelectItem key={opt.value} value={opt.value}>
+                {opt.color && (
+                  <span
+                    className={`inline-block h-2 w-2 rounded-full ${opt.color}`}
+                  />
+                )}
+                {opt.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      )}
+    </div>
   )
 }

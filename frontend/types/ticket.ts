@@ -6,3 +6,8 @@ export interface Ticket {
   created_at: string
   updated_at: string
 }
+
+export interface TicketUpdate {
+  status?: 'open' | 'closed'
+  priority?: 'low' | 'medium' | 'high'
+}

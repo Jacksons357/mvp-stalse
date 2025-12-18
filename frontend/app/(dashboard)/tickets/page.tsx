@@ -8,8 +8,6 @@ import { SkeletonTableTickets } from './components/skeleton-table-tickets'
 export default function TicketsPage() {
   const { data: ticketsData, isLoading, isPending } = useGetTickets()
 
-  console.log(ticketsData)
-
   return (
     <section className="p-5">
       <div className="border-b flex flex-col pb-3">

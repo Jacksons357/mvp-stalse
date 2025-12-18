@@ -1,6 +1,7 @@
 'use client'
 
 import type { ColumnDef } from '@tanstack/react-table'
+import { useUpdateTicket } from '@/lib/mutations/ticket'
 import type { Ticket } from '@/types/ticket'
 import { formatDateTime } from '@/utils/format-date-time'
 import { TicketSelectCell } from './ticket-select-cell'
@@ -21,20 +22,23 @@ export const columns: ColumnDef<Ticket>[] = [
   {
     accessorKey: 'status',
     header: 'Status',
-    cell: ({ row, getValue }) => {
+    cell: ({ row }) => {
       const ticket = row.original
+      const { mutate: updateTicketMutation, isPending } = useUpdateTicket()
 
       return (
         <TicketSelectCell
-          value={getValue<string>()}
+          value={ticket.status}
           options={[
-            { label: 'Aberto', value: 'open' },
-            { label: 'Fechado', value: 'closed' },
+            { label: 'Aberto', value: 'open', color: 'bg-green-700' },
+            { label: 'Fechado', value: 'closed', color: 'bg-red-700' },
           ]}
+          loading={isPending}
           onChange={(newStatus) => {
-            console.log('update status', ticket.id, newStatus)
-            // TODO: implement patch request ticket
-            // updateTicket(ticket.id, { status: newStatus })
+            updateTicketMutation({
+              ticketId: ticket.id,
+              data: { status: newStatus },
+            })
           }}
         />
       )
@@ -43,21 +47,24 @@ export const columns: ColumnDef<Ticket>[] = [
   {
     accessorKey: 'priority',
     header: 'Prioridade',
-    cell: ({ row, getValue }) => {
+    cell: ({ row }) => {
       const ticket = row.original
+      const { mutate: updateTicketMutation, isPending } = useUpdateTicket()
 
       return (
         <TicketSelectCell
-          value={getValue<string>()}
+          value={ticket.priority}
           options={[
-            { label: 'Baixa', value: 'low' },
-            { label: 'Média', value: 'medium' },
-            { label: 'Alta', value: 'high' },
+            { label: 'Baixa', value: 'low', color: 'bg-green-700' },
+            { label: 'Média', value: 'medium', color: 'bg-yellow-700' },
+            { label: 'Alta', value: 'high', color: 'bg-red-700' },
           ]}
+          loading={isPending}
           onChange={(newPriority) => {
-            console.log('update priority', ticket.id, newPriority)
-            // TODO: implement patch request ticket
-            // updateTicket(ticket.id, { priority: newPriority })
+            updateTicketMutation({
+              ticketId: ticket.id,
+              data: { priority: newPriority },
+            })
           }}
         />
       )
