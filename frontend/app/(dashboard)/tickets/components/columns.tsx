@@ -1,13 +1,18 @@
 'use client'
 
 import type { ColumnDef } from '@tanstack/react-table'
+import type { Ticket } from '@/types/ticket'
+import { formatDateTime } from '@/utils/format-date-time'
 import { TicketSelectCell } from './ticket-select-cell'
-import type { Ticket } from './tickets'
 
 export const columns: ColumnDef<Ticket>[] = [
   {
     accessorKey: 'created_at',
     header: 'Criado em',
+    cell: ({ getValue }) => {
+      const value = getValue<string>()
+      return value ? formatDateTime(value) : '-'
+    },
   },
   {
     accessorKey: 'title',
@@ -24,7 +29,7 @@ export const columns: ColumnDef<Ticket>[] = [
           value={getValue<string>()}
           options={[
             { label: 'Aberto', value: 'open' },
-            { label: 'Fechado', value: 'close' },
+            { label: 'Fechado', value: 'closed' },
           ]}
           onChange={(newStatus) => {
             console.log('update status', ticket.id, newStatus)
@@ -61,5 +66,9 @@ export const columns: ColumnDef<Ticket>[] = [
   {
     accessorKey: 'updated_at',
     header: 'Atualizado em',
+    cell: ({ getValue }) => {
+      const value = getValue<string>()
+      return value ? formatDateTime(value) : '-'
+    },
   },
 ]

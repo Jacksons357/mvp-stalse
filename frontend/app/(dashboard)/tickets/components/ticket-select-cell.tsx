@@ -26,7 +26,7 @@ export function TicketSelectCell({
 }: TicketSelectCellProps) {
   const statusStyles = {
     open: 'bg-green-50 text-green-700',
-    close: 'bg-red-50 text-red-700',
+    closed: 'bg-red-50 text-red-700',
   }
 
   return (

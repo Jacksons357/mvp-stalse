@@ -1,8 +1,15 @@
+'use client'
+
+import { useGetTickets } from '@/lib/queries/ticket'
 import { columns } from './components/columns'
 import { DataTable } from './components/data-table'
-import { tickets } from './components/tickets'
+import { SkeletonTableTickets } from './components/skeleton-table-tickets'
 
 export default function TicketsPage() {
+  const { data: ticketsData, isLoading, isPending } = useGetTickets()
+
+  console.log(ticketsData)
+
   return (
     <section className="p-5">
       <div className="border-b flex flex-col pb-3">
@@ -13,7 +20,11 @@ export default function TicketsPage() {
       </div>
 
       <main className="max-w-5xl mx-auto w-full">
-        <DataTable columns={columns} data={tickets} />
+        {isLoading || isPending ? (
+          <SkeletonTableTickets />
+        ) : (
+          <DataTable columns={columns} data={ticketsData || []} />
+        )}
       </main>
     </section>
   )
