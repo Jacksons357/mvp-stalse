@@ -100,3 +100,45 @@ O ETL gera um arquivo JSON em `data/processed/metrics.json` com as métricas cal
   "total_tickets": 8469
 }
 ```
+
+## Frontend
+
+
+### Setup
+```bash
+cd frontend
+npm install
+npm run dev
+cp .env.example .env.local
+```
+
+- Aplicação rodando em http://localhost:3000
+
+**Certifique de ter o backend rodando em http://localhost:8000**
+
+### Estrutura do Frontend
+
+```
+/frontend
+  ├─ app/
+  │ ├─ app/
+  │ ├─ (dashboard)/
+  │ │  ├─ components/ - componentes da dashboard
+  │ │  │  ├─ tickets/
+  │ │  │    ├─ components/ - componentes tickets
+  │ │  │    ├─ page.tsx - page tickets
+  │ │  ├─ layout.tsx - layout da dashboard
+  │ │  └─ page.tsx - page da dashboard
+  ├─ components/ - componentes globais reutilizaveis
+  │ └─ ui/ - shadcn ui
+  ├─ hooks/ - hooks personalizados
+  ├─ http/ - requisições HTTP
+  ├─ lib/ - configurações
+  │ ├─ mutations/ - mutações de estados
+  │ └─ queries/ - queries de estados
+  ├─ providers/ - providers de contexto
+  ├─ public/ - arquivos públicos
+  ├─ types/ - tipos
+  └─ utils/ - utilitários
+```
+

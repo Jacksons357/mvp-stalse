@@ -3,6 +3,5 @@ __pycache__/
 .venv/
 venv/
 *.db
-.env
-.env.*
+.env.local
 .DS_Store
